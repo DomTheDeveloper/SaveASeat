@@ -1,0 +1,24 @@
+{
+  "name": "devpost",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "bb8c45041a74316022281e2c56128726",
+      "css": "devpost-icon-black-rgb",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M552.5 314H487.6V686H548.3C676 686 734.7 611.2 734.7 500 734.7 375.6 681.4 314 552.5 314ZM868.6 0H289.7L0 500 289.7 1000H868.6L1158.3 500 868.6 0ZM548.3 805.8H367.8V194.2H557C731 194.2 859.9 277.3 859.9 500 859.9 714 705 805.8 548.3 805.8Z",
+        "width": 1158
+      },
+      "search": [
+        "devpost-icon-black-rgb"
+      ]
+    }
+  ]
+}

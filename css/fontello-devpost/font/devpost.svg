@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="devpost" horiz-adv-x="1000" >
+<font-face font-family="devpost" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="devpost-icon-black-rgb" unicode="&#xe800;" d="m553 536h-65v-372h60c128 0 187 75 187 186 0 124-54 186-182 186z m316 314h-579l-290-500 290-500h579l289 500-289 500z m-321-806h-180v612h189c174 0 303-83 303-306 0-214-155-306-312-306z" horiz-adv-x="1158" />
+</font>
+</defs>
+</svg>

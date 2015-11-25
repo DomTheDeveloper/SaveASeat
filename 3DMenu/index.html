@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Express Dine-In</title>
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <meta name="description" content="A responsive folded flyer-like restaurant menu with some 3D" />
+        <meta name="keywords" content="css3, perspective, 3d, jquery, transform3d, responsive, template, restaurant, menu, leaflet, folded, flyer, concept" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300,500|Arvo:700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 8]><style>.support-note .note-ie{display:block;}</style><![endif]-->
+
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+	<script>
+             
+    
+      
+		function add_OnClick(element) 
+			{
+				var myDataRef = new Firebase('https://shining-inferno-4386.firebaseio.com/');
+				var myCartRef = myDataRef.child("Carts").child("Reservations");
+
+				var name = element.parent().find("h5").html();
+
+				myCartRef.push({"title": name,"price":"$800"});
+
+			}
+
+
+  function Alert_OnClick(){
+
+	var myDataRef = new Firebase('https://alert-system.firebaseio.com/');
+  	var tableNumber = $("#tableNumber").html();
+
+  	myDataRef.set({tableNum: tableNumber});
+  	//alert(tableNumber);
+
+  }
+  
+    </script>
+	
+	<style>
+		.app{
+			margin-right: 6px !important;
+		}
+	</style>
+
+	    </head>
+    <body>
+
+    	<span id="tableNumber" style="display:none">17</span>
+        <div class="container">
+		
+		<br />
+		
+			<section class="main">
+
+				<div id="rm-container" class="rm-container">
+
+					<div class="rm-wrapper">
+
+						<div class="rm-cover">
+
+							<div class="rm-front">
+								<div class="rm-content">
+
+									<div class="rm-logo"></div>
+									<h2>Wolfgang's Steakhouse</h2>
+									</br>
+								</br>
+							</br>
+
+									<a href="#" class="rm-button-open">View the Menu</a>
+									<div class="rm-info">
+										<p>
+										<strong>Save a Seat</strong><br>
+										<!--<a href="http://www.SaveASeat.co/">-->www.SaveASeat.co<br>
+										<br>
+									</div>
+
+								</div><!-- /rm-content -->
+							</div><!-- /rm-front -->
+
+							<div class="rm-back">
+								<div class="rm-content">
+									<h4>Appetizers</h4>
+									<dl>
+										<dt>
+										<input type="checkbox" class="css-checkbox lrg app" /><a href="#" class="rm-viewdetails" data-thumb="images/jumbococktail.jpg">Jumbo Lobster Cocktail</a></dt>
+										<dd>Delicious wild shrimp cooked until tender. Served with our zesty house cocktail sauce and lemon wedges.</dd>
+
+										<dt>
+										<input type="checkbox" class="css-checkbox lrg app" /><a href="#" class="rm-viewdetails" data-thumb="images/2.jpg">Lobster Cocktail</a></dt>
+										<dd>Marinated with locally grown produce and sautéed to perfection.</dd>
+
+										<dt>
+										<input type="checkbox" class="css-checkbox lrg app" /><a href="#" class="rm-viewdetails" data-thumb="images/crabcake.jpeg">Wolfgang's Crab Cake</a></dt>
+										<dd>Crab meat topped with a light coating of panko for a crispy coating.</dd>
+
+										<dt>
+										<input type="checkbox" class="css-checkbox lrg app" /><a href="#" class="rm-viewdetails" data-thumb="images/4.jpg">Seafood Platter</a></dt>
+										<dd>Two classic batter dipped fish fillets paired with butterfly shrimp and stuffed crab shell.</dd>
+										
+										<dt>
+										<input type="checkbox" class="css-checkbox lrg app" /><a href="#" class="rm-viewdetails" data-thumb="images/6.jpg">Tuna Tartar</a></dt>
+										<dd>Combines fresh cubes of tuna and lemon juice layered between home-made potato chips.</dd>
+									</dl>
+									</br>
+									<h4>Beverages</h4>
+									<dl>
+
+										<!--
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/1.jpg">Red Bull</a></dt>
+										<dd>Get through the day with a Red Bull with Simple Drinks.</dd>
+
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/13.jpg">Mountain Dew</a></dt>
+										<dd>Enoy a refreshing Mountain Dew with Simple Drinks.</dd>
+										-->
+<tr>
+	<td>
+		<img src="images/mountaindew.png" heights="70" width="120" onClick="drink()">
+	</td>
+		<td>
+			<img src="images/redbull.png" heights="70" width="120" onClick="drink()">
+		</td>
+
+		</tr>
+										<dt></dt>
+
+									</dl>
+								</div><!-- /rm-content -->
+								<div class="rm-overlay"></div>
+
+							</div><!-- /rm-back -->
+
+						</div><!-- /rm-cover -->
+
+						<div class="rm-middle">
+							<div class="rm-inner">
+								<div class="rm-content">
+									<h4>Main Courses</h4>
+									<dl>
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/burger.jpg">Classic Burger</a></dt>
+										<dd>Served with tomato, pickles, onion, lettuce steak fries & onion rings.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/steaksandwich.jpg">Wolfgang's Steak Sandwich</a></dt>
+										<dd>Juicy hamburger marinated with our portobello sauce.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/filetmignon.jpg">Filet Mignon Mushroom Sauce</a></dt>
+										<dd>Demi-glaze mushrooms & sherry wine served with mashed potatoes & broccoli.</dd>
+
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/ribeyesteak.jpg">Cajun Rib-eye Steak</a></dt>
+										<dd>Rib-eye steak with cajun spices served with mashed potatoes & creamed spinach.</dd>
+
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/vealchop.jpg">Veal Chop Broiled or Breaded Milanese<a/></dt>
+										<dd>Broiled veal loin chop served with mashed potatoes and creamed spinach with mixed greens & tomato chopped salad.</dd>
+
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/filetmignon.jpg">Filet Mignon</a></dt>
+										<dd>Delectable steak, cooked to perfection.</dd>
+																													
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/lambchops.jpg">Lamb Chops</a></dt>
+										<dd>Lamb loin chops broiled served with mashed potatoes & creamed spinach.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/choppedsteak.jpg">Chopped Steak</a></dt>
+										<dd>Served with sauteed onions, mashed potatoes and creamed spinach.</dd>
+										
+									</dl>
+								</div><!-- /rm-content -->
+								<div class="rm-overlay"></div>
+							</div><!-- /rm-inner -->
+						</div><!-- /rm-middle -->
+
+						<div class="rm-right">
+
+							<div class="rm-front">
+								
+							</div>
+
+							<div class="rm-back">
+								<span class="rm-close">Close</span>
+								<div class="rm-content">
+									<h4>Desserts</h4>
+									<dl>
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/applestrudel.jpg">Apple Strudel</a></dt>
+										<dd>A super flaky crust with a mildy sweet aple, raisins and crunchy walnut for a filling.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/cheesecake.jpg">Cheesecake</a></dt>
+										<dd>Cheesecake with smooth, dense and creamy layers of cheese.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/creambrulee.jpg">Creme Brulee</a></dt>
+										<dd>Has a brittle caramelized topping with smooth, creamy custard as the filling.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/icecream.jpg">Ice Cream</a></dt>
+										<dd>Handmade smooth and sweet vanilla icecream.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/keylimepie.jpg">Key Lime Pie</a></dt>
+										<dd>Starts with a sweet and grainy graham cracker crust, that is filled with a creamy smooth lime flavored filling.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/sorbet.jpg">Sorbet</a></dt>
+										<dd>Sorbey is  creamy, tropical, not too sweet, and a perfect summertime treat.</dd>
+										
+										<dt><a href="#" class="rm-viewdetails" data-thumb="images/sundae.jpg">Hot Fudge Sundae</a></dt>
+										<dd>A classic sundae with vanilla ice cream and hot fudge topping it off.</dd>
+										
+										<span id="spanAlert">
+											<button id="btnAlert" class = "alertButton" onclick="Alert_OnClick()">Alert!</button>
+											<dd>Alert the waiter/waitress.</dd>
+										</span>
+									</dl>
+								
+								</div><!-- /rm-content -->
+							</div><!-- /rm-back -->
+
+						</div><!-- /rm-right -->
+					</div><!-- /rm-wrapper -->
+
+				</div><!-- /rm-container -->
+
+			</section>
+			
+        </div>
+		<!-- jQuery if needed -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				Menu.init();
+			
+			});
+			
+			 $(document).ready(function(){
+	
+	
+	var QueryString = function () {
+  // This function is anonymous, is executed immediately and 
+  // the return value is assigned to QueryString!
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+        // If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = decodeURIComponent(pair[1]);
+        // If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+      query_string[pair[0]] = arr;
+        // If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(decodeURIComponent(pair[1]));
+    }
+  } 
+    return query_string;
+}();
+
+
+	$("#tableNumber").html(QueryString.table);
+	
+	if (QueryString.express != null){
+		if (QueryString.express == "true"){
+			$("#spanAlert").hide();
+			$(".app").show();
+		}
+		else{
+			$("#spanAlert").show();
+			$(".app").hide();
+		}
+	}
+
+});
+
+function start() {
+ifrm = document.createElement("IFRAME");
+ifrm.setAttribute("src", "start.html");
+ifrm.style.width = 0+"px";
+ifrm.style.height = 0+"px";
+ifrm.style.border = 0+"px";
+document.body.appendChild(ifrm);
+}
+
+function stop() {
+ifrm = document.createElement("IFRAME");
+ifrm.setAttribute("src", "stop.html");
+ifrm.style.width = 0+"px";
+ifrm.style.height = 0+"px";
+ifrm.style.border = 0+"px";
+document.body.appendChild(ifrm);
+}
+
+function timer(){
+ setTimeout(function(){ start(); }, 1);
+ 
+ setTimeout(function(){ stop(); }, 10000);
+}
+
+function drink(){
+	timer();
+}
+		</script>
+    </body>
+</html>

@@ -1,0 +1,969 @@
+<html>
+<head>
+        
+		<!--
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<span class='socialShare'></span>
+	-->
+		
+        <link href="time_files/prettify-1.css" rel="stylesheet">
+		<link rel="stylesheet" href="./time_files/rrssb/css/rrssb.css" />
+		<link href="./time_files/bootstrap.icon-large.min.css" rel="stylesheet">
+		<script type="text/javascript" src="time_files/jquery-2.js"></script>
+			<script src="time_files/moment-with-locales.js"></script>
+			<script src="time_files/bootstrap-datetimepicker-morph.js"></script>
+   
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link href="./time_files/bootstrap-datetimepicker-web.css" rel="stylesheet">
+
+		<script src="./time_files/moment-with-locales.js"></script>
+		
+
+		
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		
+				<script src="./time_files/validator.js"></script>
+				
+		<link href='./time_files/time.css' rel='stylesheet' type='text/css'>		
+		<link href='./time_files/scaramouche/stylesheet.css' rel='stylesheet' type='text/css'>
+		
+
+		  
+   
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepickerMain').datetimepicker({
+					inline:true,
+					maxDate: moment().add(2, 'y'),
+					minDate:
+						moment().add(1, 'h').hours() >= 12 ?
+							moment().add(30, 'm') :
+							moment().endOf('day').add(12, 'h'),
+					defaultDate: 
+						moment().add(1, 'h').hours() >= 12 ?
+							moment().add(1, 'h') :
+							moment().endOf('day').add(12, 'h').add(30, 'm'),
+					enabledHours: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+					stepping:15,
+					toolbarPlacement: "bottom"
+				});
+            });
+			
+		</script>
+		
+		<link href="time_files/cool-share-assets/cool-share/plugin.css" media="all" rel="stylesheet" />
+		<script src="time_files/cool-share-assets/cool-share/plugin.js"></script>
+		<script src="time_files/cool-share-assets/js/demo.js"></script>
+		
+<script type="text/javascript">
+		function blinker() {
+			$('.separator').fadeOut(500);
+			$('.separator').fadeIn(500);
+		}
+		setInterval(blinker, 1000);
+</script>
+
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script type='text/javascript' src="./time_files/jquery.maskedinput.js"></script>
+
+
+<script>
+var $$ = jQuery.noConflict();
+</script>
+		
+<script type="text/javascript">
+
+	
+	
+	setTimeout(function (){
+
+  $("#sharethis").bind('click', function(e) {
+		alert(1);
+		$(".showSocialButtons").click();
+	});	
+
+}, 5000);
+
+$(document).ready(function(){
+
+
+	$("#clickSpecial").bind('click', function(e) {
+		$(".tabRequests").click();
+	});
+
+var QueryString = function () {
+  // This function is anonymous, is executed immediately and 
+  // the return value is assigned to QueryString!
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+        // If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = decodeURIComponent(pair[1]);
+        // If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+      query_string[pair[0]] = arr;
+        // If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(decodeURIComponent(pair[1]));
+    }
+  } 
+    return query_string;
+}();
+
+	$("#tableNum").html(QueryString.tableNum);
+	
+
+
+	
+  
+	$('.norightclick').bind('contextmenu', function(e) {
+		return false;
+	}); 
+
+	$$("#login-phone").mask("+1 (999) 999-9999");
+	
+	$(".socket").prependTo(".userform");
+	
+	$('.btn-request').bind('click', function(e) {
+	
+	
+		
+		
+		$("#divShare").addClass('big');
+	
+		$(".liSuccess").addClass("expander-big");
+		
+		$(".picker-switch").toggle("blind", {direction: "down"});
+	
+		$($(".btn-primary").get().reverse()).each(function(index) {
+			$(this).delay(200*index).toggle("drop");
+		});
+		
+		$("#requestTitle").delay(500).toggle("blind", {direction: "down"});
+		
+		$(".wine").delay(500).toggle("blind", {direction: "down"});
+		
+	});
+
+	$('.btn-custom').bind('click', function(e) {
+		$(".wine").hide();
+	}); 	
+	
+	$('.wine').bind('click', function(e) {
+		
+		$("#divShare").removeClass('big');
+	
+		$(".liSuccess").removeClass("expander-big");
+		
+		$(".picker-switch").toggle("blind", {direction: "down"});
+	
+		$($(".btn-primary").get().reverse()).each(function(index) {
+			$(this).delay(200*index).toggle("drop");
+		});
+		
+		$("#requestTitle").delay(500).toggle("blind", {direction: "down"});
+		
+		$(".wine").delay(500).toggle("blind", {direction: "down"});
+		
+	}); 
+	
+	
+	
+	$('#loginform').validator().on('submit', function (e) {
+		if (e.isDefaultPrevented()) {
+			$("#btnSubmit").effect( "shake", {times: 2, distance: 15}, 750 );
+			return false;
+		}
+		else {
+			if ($("#btnSubmit").html() == "Save a Seat"){
+				e.preventDefault();
+				$("#btnSubmit").html("Saving a seat...");
+				
+
+				var date = $("#datetimepickerMain").data('DateTimePicker').viewDate();
+				
+				$("#_day").html(date.format('dddd'));
+				$("#_date").html(date.format('D'));
+				$("#_month").html(date.format('MMMM'));
+				
+				$("#_time").html(date.format('h:mm A'));
+				
+			
+				$(".picker-switch").delay(300).toggle("blind", {direction: "down"});
+				
+				$("#inputs").delay(300).toggle("blind", {direction: "up"});
+				
+				$(".socket").delay(500).toggle("fade");
+				
+				$("#tdDate").delay(3000).queue(function() { $(this).remove(); });
+				$("#tdTime").delay(3000).queue(function() { $(this).remove(); });
+				$("#tdUser").delay(3000).queue(function() { $(this).remove(); })
+				
+				$(".liUser").delay(3000)
+					.queue(function() {
+							$(this).removeClass("liUser");
+							$(this).addClass("liSuccess");
+				});
+				
+				$(".tabSuccess").delay(3000).queue(function() { $(this).addClass('tabActive'); });
+				$("#tdSuccess").delay(3000).toggle("fade");
+				$("#tdShare").delay(3000).toggle("fade");
+				$("#tdRequests").delay(3000).toggle("fade");
+				
+				
+				
+				$(".socket").delay(5500).toggle("fade");
+				$('#btnSubmit').delay(6000).toggle("fade");
+				
+				$("#thankyou").delay(6500).toggle("blind", {direction: "up"});
+				
+				$(".picker-switch").delay(6500).toggle("blind", {direction: "down"});
+			}
+			return false;
+		}
+	});
+	
+});
+		
+</script>
+
+
+		
+		<style>
+		
+		.socialPlugin .showSocialButtons{
+			padding: 0px;
+			border: 0px;
+		}
+		
+		/*
+		.socialPlugin{
+			display:inline-flex;
+			margin-top:-40px;
+			margin-left:-10px;
+			margin-right:-10px;
+		}
+		*/
+		#container{    
+		}
+		.white{
+			color:white !important;
+		}
+		
+		.expander-big{
+			height:100% !important;
+		}
+		
+		.big{
+			margin-top:-60px;
+		}
+		
+		.wine{
+			margin-left:35px;
+		}
+		
+		.expander {
+		height:240px;
+    -webkit-transition: width .2s ease;
+    -moz-transition: width .2s ease;
+    -o-transition: width .2s ease;
+    transition: width .2s ease;
+    
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0px;
+}
+.expander.in {
+    width: 100%;
+}
+
+		button{
+			padding: 10px;
+			border: 0px;
+			padding-left: 15px;
+			padding-right: 15px;
+			margin-top: -10px;
+		}
+		
+		#btnSubmit{
+			height:40px !important;
+			width:150px !important;
+		}
+		
+		.has-error .input-group-addon{
+			color:white;
+			background-color:#a94442 !important;
+		}
+		
+		.field{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		
+		.input-group-addon{
+			background-color:#5491C4 !important;
+			color:white
+		}
+		
+		.tabActive{
+			background-color:#5491C4;
+			color:white
+		}
+		.tabActive:hover{
+			background-color:#5491C4 !important;
+			/* background-color:#7FB1DB !important; */
+			color:white
+		}
+		.tabActive.disabled:hover{
+			background-color:white !important;
+			color:#777;
+		}
+		.timeFont, .bootstrap-datetimepicker-widget .timepicker-hour, .bootstrap-datetimepicker-widget .timepicker-minute, .bootstrap-datetimepicker-widget .timepicker-second{
+			font-size:2em !important;
+		}
+		.separator{
+			font-size:2.2em !important;
+		}
+		.period{
+			font-size:1.5em;
+		}
+		.noselect {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	
+		
+		#thankyoucontent{
+			padding:10px;
+		}
+		#thankyoucontent p{
+			text-align:center;
+		}
+		
+		#thankyou .headline{
+			font: 40px/20px "scaramouche";
+		}
+		
+		.headline{
+			color: #5491C4;
+			text-align:center;
+			display:table;
+			margin:0 auto;
+			vertical-align:baseline;
+			padding-bottom:5px;
+		}
+		
+		.rrssb-buttons li{
+			float:none;
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-bottom:20px;
+		}
+		
+		.form-control{
+		}
+		
+		.btn-wine{
+			margin-top:10px;
+		}
+		
+		.inputs{
+			margin:20px;
+		}
+		
+		.facebook{
+			background-color:rgb(59,89,152) !important;
+			color:white !important;
+		}
+		#share-facebook:hover{
+			background-color:rgba(59,89,152,.9) !important;
+		}
+		
+		.twitter{
+			background-color:rgb(0, 172, 237) !important;
+			color: white !important;
+		}
+		#share-twitter:hover{
+			background-color:rgba(0, 172, 237,.9) !important;
+		}
+		
+		.googleplus{
+			background-color:rgb(211, 72, 54) !important;
+			color: white !important;
+		}
+		#share-googleplus:hover{
+			background-color:rgba(211, 72, 54,.9) !important;
+		}
+		
+		.email{
+			background-color:rgb(84,145,196) !important;
+			color: white !important;
+		}
+		#share-email:hover{
+			background-color:rgba(84,145,196,.9) !important;
+		}
+		
+
+		
+		</style>
+		
+		
+   
+   
+   </head>
+   <body>
+   
+   <span id="tableNum"  style='display:none;'>17</span>
+<div style='display:none;'>
+
+<div id="sharebuttons">
+
+   <!-- Buttons start here. Copy this ul to your document. -->
+<ul class="rrssb-buttons clearfix">
+  <li class="rrssb-email">
+    <a href="mailto:?subject=Check%20out%20how%20ridiculously%20responsive%20these%20social%20buttons%20are&amp;body=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Findex.html">
+      <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M20.11 26.147c-2.335 1.05-4.36 1.4-7.124 1.4C6.524 27.548.84 22.916.84 15.284.84 7.343 6.602.45 15.4.45c6.854 0 11.8 4.7 11.8 11.252 0 5.684-3.193 9.265-7.398 9.3-1.83 0-3.153-.934-3.347-2.997h-.077c-1.208 1.986-2.96 2.997-5.023 2.997-2.532 0-4.36-1.868-4.36-5.062 0-4.75 3.503-9.07 9.11-9.07 1.713 0 3.7.4 4.6.972l-1.17 7.203c-.387 2.298-.115 3.3 1 3.4 1.674 0 3.774-2.102 3.774-6.58 0-5.06-3.27-8.994-9.304-8.994C9.05 2.87 3.83 7.545 3.83 14.97c0 6.5 4.2 10.2 10 10.202 1.987 0 4.09-.43 5.647-1.245l.634 2.22zM16.647 10.1c-.31-.078-.7-.155-1.207-.155-2.572 0-4.596 2.53-4.596 5.53 0 1.5.7 2.4 1.9 2.4 1.44 0 2.96-1.83 3.31-4.088l.592-3.72z"/></svg></span>
+      <span class="rrssb-text">email</span>
+    </a>
+  </li>
+  <li class="rrssb-facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://kurtnoble.com/labs/rrssb/index.html" class="popup">
+      <span class="rrssb-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"
+          class="cls-2" fill-rule="evenodd"/></svg>
+      </span>
+      <span class="rrssb-text">facebook</span>
+    </a>
+  </li>  
+  <li class="rrssb-twitter">
+    <a href="https://twitter.com/intent/tweet?text=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20%40dbox%20and%20%40joshuatuscan%3A%20http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%20%7C%20http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Fmedia%2Frrssb-preview.png"
+    class="popup">
+      <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/></svg></span>
+      <span class="rrssb-text">twitter</span>
+    </a>
+  </li>
+</ul>
+<!-- Buttons end here -->
+</div>
+</div>
+
+<div id='container'>
+    <div class='col-sm-6'>
+		<div id='datetimepickerMain'></div>
+    </div>
+</div>
+
+
+
+<div style='display:none;'>
+		<!-- http://codepen.io/aslan11/pen/IxLDJ -->
+
+		<div class="socket noselect norightclick" style="display:none;">
+				<img src="cutlery6.svg" class="center-gel" />
+			<div class="gel c19 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c20 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c21 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c22 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c23 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c24 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c25 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c26 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c28 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c29 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c30 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c31 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c32 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c33 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c34 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c35 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c36 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c37 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+		</div>
+	
+	
+	<style>
+	body{
+				background: white;
+			}
+			
+			.socket{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 50%;
+				margin-left: -100px;
+				top: 50%;
+				margin-top: -67px;
+			}
+			
+			.hex-brick{
+			  background: #5491C4;
+			  width: 30px;
+			  height: 17px;
+			  position: absolute;
+			  top: 5px;
+        animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+			}
+			
+			.h2{
+				transform: rotate(60deg);
+				-webkit-transform: rotate(60deg);
+			}
+			
+			.h3{
+				transform: rotate(-60deg);
+				-webkit-transform: rotate(-60deg);
+			}
+			
+			.gel{
+				height: 30px;
+				width: 30px;	
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				position: absolute;
+        top: 50%;
+        left: 50%;
+			}
+			
+			.center-gel{
+				margin-left: 40px;
+				margin-top: 55px;
+				width:120px;
+				
+				animation-name: smallpulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .5s;
+				-webkit-animation-name: smallpulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .5s;
+			}
+			
+			.c1{
+				margin-left: -47px;
+				margin-top: -15px;
+			}
+			
+			.c2{
+				margin-left: -31px;
+				margin-top: -43px;
+			}
+			
+			.c3{
+				margin-left: 1px;
+				margin-top: -43px;
+			}
+			
+			.c4{
+				margin-left: 17px;
+				margin-top: -15px;
+			}
+			.c5{
+				margin-left: -31px;
+				margin-top: 13px;
+			}
+			
+			.c6{
+				margin-left: 1px;
+				margin-top: 13px;
+			}
+			
+			.c7{
+				margin-left: -63px;
+				margin-top: -43px;
+			}
+			
+			.c8{
+				margin-left: 33px;
+				margin-top: -43px;
+			}
+			
+			.c9{
+				margin-left: -15px;
+				margin-top: 41px;
+			}
+			
+			.c10{
+				margin-left: -63px;
+				margin-top: 13px;
+			}
+			
+			.c11{
+				margin-left: 33px;
+				margin-top: 13px;
+			}
+			
+			.c12{
+				margin-left: -15px;
+				margin-top: -71px;
+			}
+			
+			.c13{
+				margin-left: -47px;
+				margin-top: -71px;
+			}
+			
+			.c14{
+				margin-left: 17px;
+				margin-top: -71px;
+			}
+			
+			.c15{
+				margin-left: -47px;
+				margin-top: 41px;
+			}
+			
+			.c16{
+				margin-left: 17px;
+				margin-top: 41px;
+			}
+			
+			.c17{
+				margin-left: -79px;
+				margin-top: -15px;
+			}
+			
+			.c18{
+				margin-left: 49px;
+				margin-top: -15px;
+			}
+			
+			.c19{
+				margin-left: -63px;
+				margin-top: -99px;
+			}
+			
+			.c20{
+				margin-left: 33px;
+				margin-top: -99px;
+			}
+			
+			.c21{
+				margin-left: 1px;
+				margin-top: -99px;
+			}
+			
+			.c22{
+				margin-left: -31px;
+				margin-top: -99px;
+			}
+			
+			.c23{
+				margin-left: -63px;
+				margin-top: 69px;
+			}
+			
+			.c24{
+				margin-left: 33px;
+				margin-top: 69px;
+			}
+			
+			.c25{
+				margin-left: 1px;
+				margin-top: 69px;
+			}
+			
+			.c26{
+				margin-left: -31px;
+				margin-top: 69px;
+			}
+			
+			.c27{
+				margin-left: -79px;
+				margin-top: -15px;
+			}
+			
+			.c28{
+				margin-left: -95px;
+				margin-top: -43px;
+			}
+			
+			.c29{
+				margin-left: -95px;
+				margin-top: 13px;
+			}
+			
+			.c30{
+				margin-left: 49px;
+				margin-top: 41px;
+			}
+			
+			.c31{
+				margin-left: -79px;
+				margin-top: -71px;
+			}
+			
+			.c32{
+				margin-left: -111px;
+				margin-top: -15px;
+			}
+			
+			.c33{
+				margin-left: 65px;
+				margin-top: -43px;
+			}
+			
+			.c34{
+				margin-left: 65px;
+				margin-top: 13px;
+			}
+			
+			.c35{
+				margin-left: -79px;
+				margin-top: 41px;
+			}
+			
+			.c36{
+				margin-left: 49px;
+				margin-top: -71px;
+			}
+			
+			.c37{
+				margin-left: 81px;
+				margin-top: -15px;
+			}
+			
+			.r1{
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .2s;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .2s;
+			}
+			
+			.r2{
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .4s;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .4s;
+			}
+			
+			.r3{
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .6s;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .6s;
+			}
+			
+			.r1 > .hex-brick{
+				animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .2s;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .2s;
+			}
+			
+			.r2 > .hex-brick{
+				animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .4s;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .4s;
+			}
+			
+			.r3 > .hex-brick{
+				animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .6s;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .6s;
+			}
+			
+			
+			@keyframes smallpulse{
+				0%{
+					transform: rotateY(0deg);
+				}
+				100%{
+					transform: rotateY(360deg);
+				}
+			}
+			@-webkit-keyframes smallpulse{
+				0%{
+					-webkit-transform: rotateY(0deg);
+				}
+				100%{
+					-webkit-transform: rotateY(360deg);
+				}
+			}
+			
+			
+			
+			@keyframes pulse{
+				0%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+				
+				50%{
+					-webkit-transform: scale(0.01);
+					transform: scale(0.01);
+				}
+				
+				100%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+			@-webkit-keyframes pulse{
+				0%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+				
+				50%{
+					-webkit-transform: scale(0.01);
+					transform: scale(0.01);
+				}
+				
+				100%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+			
+			
+			@keyframes fade{
+				0%{
+					background: #5491C4;
+				}
+				
+				50%{
+					background: #90BBBF;
+				}
+				
+				100%{
+					background: #5491C4;
+				}
+			}
+			
+			@-webkit-keyframes fade{
+				0%{
+					background: #5491C4;
+				}
+				
+				50%{
+					background: #389CA6;
+				}
+				
+				100%{
+					background: #5491C4;
+				}
+			}
+			</style>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+@font-face {
+      font-family: 'devpost';
+      src: url('./fontello-devpost/font/devpost.eot?31272548');
+      src: url('./fontello-devpost/font/devpost.eot?31272548#iefix') format('embedded-opentype'),
+           url('./fontello-devpost/font/devpost.woff?31272548') format('woff'),
+           url('./fontello-devpost/font/devpost.ttf?31272548') format('truetype'),
+           url('./fontello-devpost/font/devpost.svg?31272548#devpost') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+     
+     
+@font-face {
+      font-family: 'devpost';
+      src: url('./fontello-devpost/font/devpost.eot?31272548');
+      src: url('./fontello-devpost/font/devpost.eot?31272548#iefix') format('embedded-opentype'),
+           url('./fontello-devpost/font/devpost.woff?31272548') format('woff'),
+           url('./fontello-devpost/font/devpost.ttf?31272548') format('truetype'),
+           url('./fontello-devpost/font/devpost.svg?31272548#devpost') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+     
+     
+    .demo-icon
+    {
+      font-family: "devpost";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1.2em;
+    
+	  
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+    }
+    .demo-icon
+    {
+      font-family: "devpost";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 2.2em;
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .05em;
+	  
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+    }

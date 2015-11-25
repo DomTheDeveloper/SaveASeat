@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+
+<body>
+
+<script>
+function start() {
+ifrm = document.createElement("IFRAME");
+ifrm.setAttribute("src", "start.html");
+ifrm.style.width = 0+"px";
+ifrm.style.height = 0+"px";
+ifrm.style.border = 0+"px";
+document.body.appendChild(ifrm);
+}
+
+function stop() {
+ifrm = document.createElement("IFRAME");
+ifrm.setAttribute("src", "stop.html");
+ifrm.style.width = 0+"px";
+ifrm.style.height = 0+"px";
+ifrm.style.border = 0+"px";
+document.body.appendChild(ifrm);
+}
+
+function timer(){
+ setTimeout(function(){ start(); }, 1);
+ 
+ setTimeout(function(){ stop(); }, 6000);
+}
+</script>
+
+<input type="button" onclick="timer()" value="start" />
+
+</body>
+
+</html>
